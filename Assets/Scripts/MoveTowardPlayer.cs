@@ -15,12 +15,16 @@ public class MoveTowardPlayer : MonoBehaviour
             Debug.Log("Player detected");
         }
     }
+
+    void OnTriggerExit2D(Collider2D collision)
+    {
+        isPlayerDetected = false;
+        Debug.Log("Player outside detection zone");
+    }
     void Update()
     {
         if(isPlayerDetected == true && playerTarget != null)
         {
-            Vector3 direction = playerTarget.position - transform.position;
-
             transform.position = Vector3.MoveTowards(transform.position, playerTarget.position, moveSpeed * Time.deltaTime);
         }
     }

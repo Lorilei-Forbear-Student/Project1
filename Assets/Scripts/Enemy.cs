@@ -8,13 +8,13 @@ public class Enemy : MonoBehaviour
     public float leftBoundary = -5f;
     private int direction = 1;
 
-    // void Update()
-    // {
-    //     transform.Translate(Vector3.right * speed * direction * Time.deltaTime);
+    void Update()
+    {
+        transform.Translate(Vector3.right * speed * direction * Time.deltaTime);
 
-    //     if(transform.position.x >= rightBoundary || transform.position.x <= leftBoundary)
-    //     {
-    //         direction *= -1;
-    //     }
-    // }
+        if(transform.position.x >= rightBoundary || transform.position.x <= leftBoundary)
+        {
+            direction *= -1;
+        }
+    }
 }
