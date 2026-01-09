@@ -1,4 +1,3 @@
-using UnityEditor;
 using UnityEditor.ShaderKeywordFilter;
 using UnityEngine;
 
@@ -7,12 +6,6 @@ public class MoveTowardPlayer : MonoBehaviour
     private float moveSpeed = 2f;
     [SerializeField]private Transform playerTarget;
     private bool isPlayerDetected = false;
-    private Vector3 startPosition;
-
-    void Start()
-    {
-        startPosition = transform.position;
-    }
 
     void OnTriggerEnter2D(Collider2D collision)
     {
@@ -30,13 +23,9 @@ public class MoveTowardPlayer : MonoBehaviour
     }
     void Update()
     {
-        if(isPlayerDetected == true)
+        if(isPlayerDetected == true && playerTarget != null)
         {
             transform.position = Vector3.MoveTowards(transform.position, playerTarget.position, moveSpeed * Time.deltaTime);
-        }
-        else
-        {
-            transform.position = Vector3.MoveTowards(transform.position, startPosition, moveSpeed * Time.deltaTime);
         }
     }
 }
