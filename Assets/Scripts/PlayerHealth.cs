@@ -4,7 +4,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Health : MonoBehaviour
+public class PlayerHealth : MonoBehaviour
 {
 [SerializeField] private int maxHealth = 100;
 [SerializeField] private int damage;
