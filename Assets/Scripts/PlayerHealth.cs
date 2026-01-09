@@ -6,12 +6,14 @@ using UnityEngine.SceneManagement;
 
 public class PlayerHealth : MonoBehaviour
 {
-[SerializeField] private int maxHealth = 100;
-[SerializeField] private int damage;
-[SerializeField] private int currentHealth;
+[SerializeField] private float maxHealth;
+[SerializeField] private float damage;
+[SerializeField] private float currentHealth;
+[SerializeField] private HealthBarUi healthBar;
 
     void Start()
     {
+        healthBar.SetMaxHealth(maxHealth);
         currentHealth = maxHealth;
     }
 
@@ -19,13 +21,21 @@ public class PlayerHealth : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Enemy"))
         {
-            currentHealth -= damage;
+            SetHealth(-damage);
             if(currentHealth == 0)
             {
                 GameOver();
             }
         }
     } 
+
+    public void SetHealth(float healthChange)
+    {
+        currentHealth += healthChange;
+        currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
+
+        healthBar.SetHealth(currentHealth);
+    }
     public void GameOver()
     {
             SceneManager.LoadScene("Game Over");

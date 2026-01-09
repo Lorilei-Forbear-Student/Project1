@@ -1,9 +1,23 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class HealthBarUi : MonoBehaviour
 {
-    public float health, maxHealth, width, height;
+    public float Health, MaxHealth, Width, Height;
     [SerializeField] private RectTransform healthBar;
+
+    public void SetMaxHealth(float maxHealth)
+    {
+        MaxHealth = maxHealth;
+    }
+
+    public void SetHealth(float health)
+    {
+        Health = health;
+        float newHeight = (Health / MaxHealth) * Height;
+
+        healthBar.sizeDelta = new Vector2(Width, newHeight);
+    }
 }
