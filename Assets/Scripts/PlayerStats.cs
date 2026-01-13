@@ -33,6 +33,18 @@ public class PlayerStats : MonoBehaviour
         }
     } 
 
+    void Update()
+    {
+        if (Input.GetKey(KeyCode.LeftShift))
+        {
+            SetStamina(-decreaseStamina);
+        }
+        else if(!Input.GetKey(KeyCode.LeftShift) && currentStamina < 100)
+        {
+            SetStamina(increaseStamina);
+        }
+
+    }
     public void SetHealth(float healthChange)
     {
         currentHealth += healthChange;
