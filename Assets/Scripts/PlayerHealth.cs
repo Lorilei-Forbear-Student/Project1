@@ -6,10 +6,12 @@ using UnityEngine.SceneManagement;
 
 public class PlayerHealth : MonoBehaviour
 {
-[SerializeField] private float maxHealth;
-[SerializeField] private float damage;
-[SerializeField] private float currentHealth;
-[SerializeField] private HealthBarUi healthBar;
+            //health variables
+[SerializeField] private float maxHealth, damage, currentHealth;
+[SerializeField] private PlayerStatUI healthBar;
+            //stamina variables
+[SerializeField] private float maxStamina, reduceStamina, increaseStamina, currentStamina;
+
 
     void Start()
     {
@@ -28,6 +30,15 @@ public class PlayerHealth : MonoBehaviour
             }
         }
     } 
+
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.LeftShift))
+        {
+            Debug.Log("left shift pressed");
+
+        }
+    }
 
     public void SetHealth(float healthChange)
     {
