@@ -9,7 +9,7 @@ public class PlayerStats : MonoBehaviour
 [SerializeField] private float maxHealth;
 [SerializeField] private float damage;
 [SerializeField] private float currentHealth;
-[SerializeField] private HealthBarUi healthBar;
+[SerializeField] private PlayerStatUI healthBar;
 
     void Start()
     {
