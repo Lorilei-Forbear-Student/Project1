@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class HealthBarUi : MonoBehaviour
+public class PlayerStatUI : MonoBehaviour
 {
     public float Health, MaxHealth, Width, Height;
     [SerializeField] private RectTransform healthBar;
