@@ -1,17 +1,17 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEditor;
 
 public class PlayerStats : MonoBehaviour
 {
                 //health vars
-[SerializeField] private float maxHealth, damage, currentHealth;
+[SerializeField] public float maxHealth, damage, currentHealth;
 [SerializeField] private PlayerStatUI healthBar;
                 //stamina vars
-[SerializeField] private float maxStamina, decreaseStamina, increaseStamina, currentStamina;
+[SerializeField] public float maxStamina, decreaseStamina, increaseStamina, currentStamina;
 [SerializeField] private PlayerStatUI staminaBar;
+                //movement vars
+public PlayerMovement playerMovement;
 
     void Start()
     {
@@ -38,10 +38,16 @@ public class PlayerStats : MonoBehaviour
         if (Input.GetKey(KeyCode.LeftShift))
         {
             SetStamina(-decreaseStamina);
+            playerMovement.speed = 10f;
         }
         else if(!Input.GetKey(KeyCode.LeftShift) && currentStamina < 100)
         {
+            playerMovement.speed = 5f;
             SetStamina(increaseStamina);
+        }
+        else if(currentStamina == 0)
+        {
+            playerMovement.speed = 5f;
         }
 
     }
