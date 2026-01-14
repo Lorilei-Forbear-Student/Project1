@@ -17,6 +17,7 @@ public PlayerMovement playerMovement;
     {
         healthBar.SetMaxHealth(maxHealth);
         currentHealth = maxHealth;
+
         staminaBar.SetMaxStamina(maxStamina);
         currentStamina = maxStamina;
     }
@@ -35,7 +36,7 @@ public PlayerMovement playerMovement;
 
     void Update()
     {
-        if (Input.GetKey(KeyCode.LeftShift))
+        if (Input.GetKey(KeyCode.LeftShift) && currentStamina > 0)
         {
             SetStamina(-decreaseStamina);
             playerMovement.speed = 10f;
@@ -47,7 +48,9 @@ public PlayerMovement playerMovement;
         }
         else if(currentStamina == 0)
         {
+            
             playerMovement.speed = 5f;
+            SetStamina(increaseStamina);
         }
 
     }
