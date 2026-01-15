@@ -1,7 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -14,7 +10,7 @@ public class GameManager : MonoBehaviour
     {
         if(instance != null)
         {
-            Destroy(gameObject);
+            CleanUpAndDestroy();
             return;
         }
         else
@@ -33,5 +29,16 @@ public class GameManager : MonoBehaviour
                 DontDestroyOnLoad(obj);
             }
         }
+    }
+
+
+    private void CleanUpAndDestroy()
+    {
+        foreach(GameObject obj in persistentObjects)
+        {
+            Destroy(obj);
+        }
+
+        Destroy(gameObject);
     }
 }
