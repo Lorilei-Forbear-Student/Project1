@@ -1,18 +1,37 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public static GameManager instance;
+
+    [Header("Persistent Objects")] public GameObject[] persistentObjects;
+
+    private void Awake()
     {
-        
+        if(instance != null)
+        {
+            Destroy(gameObject);
+            return;
+        }
+        else
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    private void MarkPersistentObjects()
     {
-        
+        foreach(GameObject obj in persistentObjects)
+        {
+            if(obj != null)
+            {
+                DontDestroyOnLoad(obj);
+            }
+        }
     }
 }
