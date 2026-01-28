@@ -1,6 +1,5 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEditor;
 
 public class PlayerStats : MonoBehaviour
 {
@@ -9,6 +8,7 @@ public class PlayerStats : MonoBehaviour
 [SerializeField] private PlayerStatUI healthBar;
                 //stamina vars
 [SerializeField] public float maxStamina, decreaseStamina, increaseStamina, currentStamina;
+public bool zeroed = false;
 [SerializeField] private PlayerStatUI staminaBar;
                 //movement vars
 public PlayerMovement playerMovement;
@@ -36,24 +36,38 @@ public PlayerMovement playerMovement;
 
     void Update()
     {
-        if (Input.GetKey(KeyCode.LeftShift) && currentStamina > 0)
-        {
+        if (Input.GetKey(KeyCode.LeftShift) && currentStamina > 0 && zeroed == false) //if holding shift, stamina decreases and you go faster. 
+        {                                                                             //BUT, only if stamina has not been zeroed. (creates delay)
             SetStamina(-decreaseStamina);
             playerMovement.speed = 10f;
+            if(currentStamina == 0) playerMovement.speed = 5f;
         }
-        else if(!Input.GetKey(KeyCode.LeftShift) && currentStamina < 100)
+        else if(!Input.GetKey(KeyCode.LeftShift) && currentStamina < 100) //if not holding shift, stamina regens until it hits 100
         {
-            playerMovement.speed = 5f;
-            SetStamina(increaseStamina);
+            if(zeroed == true)
+            {
+                SetStamina(0.02f);
+                playerMovement.speed = 3.5f;
+                if(currentStamina == 100)
+                {
+                    zeroed = false;
+                    playerMovement.speed = 5f;
+                }
+            }
+            else
+            {
+                SetStamina(increaseStamina);
+                playerMovement.speed = 5f;
+            }
+            
         }
         else if(currentStamina == 0)
         {
-            
-            playerMovement.speed = 5f;
-            SetStamina(increaseStamina);
+            zeroed = true;
         }
 
     }
+
     public void SetHealth(float healthChange)
     {
         currentHealth += healthChange;
