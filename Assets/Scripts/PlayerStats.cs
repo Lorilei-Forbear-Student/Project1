@@ -22,7 +22,7 @@ public PlayerMovement playerMovement;
         currentStamina = maxStamina;
     }
 
-    void OnTriggerEnter2D(Collider2D other)
+    void OnTriggerStay2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("Enemy"))
         {
@@ -36,13 +36,13 @@ public PlayerMovement playerMovement;
 
     void Update()
     {
-        if (Input.GetKey(KeyCode.LeftShift) && currentStamina > 0 && zeroed == false) //if holding shift, stamina decreases and you go faster. 
+        if (Input.GetKey(KeyCode.LeftShift) && currentStamina > 0 && zeroed == false && Time.timeScale == 1f) //if holding shift, stamina decreases and you go faster. 
         {                                                                             //BUT, only if stamina has not been zeroed. (creates delay)
             SetStamina(-decreaseStamina);
-            playerMovement.speed = 10f;
+            playerMovement.speed = 7f;
             if(currentStamina == 0) playerMovement.speed = 5f;
         }
-        else if(!Input.GetKey(KeyCode.LeftShift) && currentStamina < 100) //if not holding shift, stamina regens until it hits 100
+        else if(!Input.GetKey(KeyCode.LeftShift) && currentStamina < 100 && Time.timeScale == 1f) //if not holding shift, stamina regens until it hits 100
         {
             if(zeroed == true)
             {

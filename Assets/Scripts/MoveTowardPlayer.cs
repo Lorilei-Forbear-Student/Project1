@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class MoveTowardPlayer : MonoBehaviour
 {
-    private float moveSpeed = 2f;
+    private float moveSpeed = 3f;
     [SerializeField]private Transform playerTarget;
     private bool isPlayerDetected = false;
     private Vector3 startPosition;
