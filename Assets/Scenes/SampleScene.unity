@@ -381,7 +381,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textComponent: {fileID: 1432364690}
   lines:
-  - dialogue 1
+  - longer dialogue to test clicking
   - dialogue 2
   textSpeed: 0.05
 --- !u!1 &139402922

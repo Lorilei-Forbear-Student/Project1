@@ -1,11 +1,6 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-using UnityEngine.UI;
-using System;
-using Unity.VisualScripting.Dependencies.Sqlite;
-
 public class DialogueManager : MonoBehaviour
 {
     public TextMeshProUGUI textComponent;
