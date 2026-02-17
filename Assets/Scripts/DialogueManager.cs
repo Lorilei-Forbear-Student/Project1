@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 using TMPro;
+using UnityEditor;
 public class DialogueManager : MonoBehaviour
 {
     public TextMeshProUGUI textComponent;
