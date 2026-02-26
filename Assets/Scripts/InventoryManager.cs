@@ -6,9 +6,11 @@ public class InventoryManager : MonoBehaviour
 {
     public void StackInInventory(UISlotHandler currentSlot, Item item)
     {
-        currentSlot.item.itemCount += item.itemCount;
+        if(currentSlot.item.itemId != item.itemId) { return; }
 
+        currentSlot.item.itemCount += item.itemCount;
         currentSlot.itemCountText.text = currentSlot.item.itemCount.ToString();
+        //ConfigureInventory();
     }
     public void PlaceInInventory(UISlotHandler currentSlot, Item item)
     {

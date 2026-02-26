@@ -10,6 +10,22 @@ public class UISlotHandler : MonoBehaviour, IPointerClickHandler
     public Image icon;
     public TextMeshProUGUI itemCountText;
     public InventoryManager inventoryManager;
+
+    
+    void Awake()
+    {
+        if (item != null)
+        {
+            item = item.Clone();
+            icon.sprite = item.itemIcon;
+            itemCountText.text = item.itemCount.ToString();
+        }
+        else
+        {
+            itemCountText.text = string.Empty;
+            icon.gameObject.SetActive(false);
+        }
+    }
     public void OnPointerClick(PointerEventData eventData)
     {
         // throw new System.NotImplementedException();

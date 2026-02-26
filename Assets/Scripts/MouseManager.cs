@@ -5,7 +5,8 @@ using UnityEngine;
 public class MouseManager : MonoBehaviour
 {
     public static MouseManager instance;
-    public Item currentlyHeldItem;
+    public Item heldItem;
+    public Item getHeldItem {get {return heldItem;}}
 
     private void Awake()
     {
@@ -14,42 +15,42 @@ public class MouseManager : MonoBehaviour
 
     public void UpdateHeldItem(UISlotHandler currentSlot)
     {
-        Item currentActiveItem = currentSlot.item;
+        var activeItem = currentSlot.item;
         
-        if(currentlyHeldItem != null && currentActiveItem != null && currentlyHeldItem.itemId == currentActiveItem.itemId)
+        if(heldItem != null && activeItem != null && heldItem.itemId == activeItem.itemId)
         {
-            currentSlot.inventoryManager.StackInInventory(currentSlot, currentlyHeldItem);
-            currentlyHeldItem = null;
+            currentSlot.inventoryManager.StackInInventory(currentSlot, heldItem);
+            heldItem = null;
             return;
         }
 
-        if(currentlyHeldItem != null)
+        if(currentSlot.item != null)
         {
             currentSlot.inventoryManager.ClearItemSlot(currentSlot);
         }
 
-        if(currentlyHeldItem != null)
+        if(heldItem != null)
         {
-            currentSlot.inventoryManager.PlaceInInventory(currentSlot, currentlyHeldItem);
+            currentSlot.inventoryManager.PlaceInInventory(currentSlot, heldItem);
         }
 
-        currentlyHeldItem = currentActiveItem;
+        heldItem = activeItem;
     }
 
     public void PickupFromStack(UISlotHandler currentSlot)
     {
-        if(currentlyHeldItem != null && currentlyHeldItem.itemId != currentSlot.item.itemId)
+        if(heldItem != null && heldItem.itemId != currentSlot.item.itemId)
         {
             return;
         }
 
-        if(currentlyHeldItem == null)
+        if(heldItem == null)
         {
-            currentlyHeldItem = currentSlot.item.Clone();
-            currentlyHeldItem.itemCount = 0;
+            heldItem = currentSlot.item.Clone();
+            heldItem.itemCount = default;
         }
 
-        currentlyHeldItem.itemCount++;
+        heldItem.itemCount++;
         currentSlot.item.itemCount--;
         currentSlot.itemCountText.text = currentSlot.item.itemCount.ToString();
 
