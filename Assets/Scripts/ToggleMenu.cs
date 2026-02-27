@@ -4,24 +4,19 @@ using UnityEngine;
 
 public class ToggleMenu : MonoBehaviour
 {
-    public GameObject menu, map, inventory;
-    public bool menuUp, mapUp, invUp = false;
+    public GameObject menu, map;
+    public bool menuUp, mapUp = false;
 
 
     void Update()
     {
-        if (Input.GetKeyDown("escape") && invUp == false && mapUp == false)
+        if (Input.GetKeyDown("escape") && mapUp == false)
             {
                 menuUp = !menuUp;
                 menu.SetActive(menuUp);
             }
-        if (Input.GetKeyDown("q") && menuUp == false && mapUp == false)
-            {
-                invUp = !invUp;
-                inventory.SetActive(invUp);
-            }
         
-        if (Input.GetKeyDown("m") && menuUp == false && invUp == false)
+        if (Input.GetKeyDown("m") && menuUp == false)
             {
                 mapUp = !mapUp;
                 map.SetActive(mapUp);
@@ -32,7 +27,7 @@ public class ToggleMenu : MonoBehaviour
 
     void PauseGame()
     {
-        if(menuUp == true || mapUp == true || invUp == true)
+        if(menuUp == true || mapUp == true)
         {
             Time.timeScale = 0f;
         }
