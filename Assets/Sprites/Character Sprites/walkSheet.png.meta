@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 1eba4fde891422f409e73e11e5849db6
+guid: f9141f82745bd5e408add32d1546e629
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 30
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -97,13 +97,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: conceptsmall_0
+      name: walkSheet_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 500
-        height: 500
+        width: 512
+        height: 1024
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -111,20 +111,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5d838760f671fb14e8677328722ef679
-      internalID: 1779359151
+      spriteID: 9e2b85a2eabbb7c419d0a95385c9b3eb
+      internalID: -605572722
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: conceptsmall_1
+      name: walkSheet_1
       rect:
         serializedVersion: 2
-        x: 500
+        x: 512
         y: 0
-        width: 500
-        height: 500
+        width: 512
+        height: 1024
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -132,20 +132,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 89b049ce8ad642740b2cb452d336fdb2
-      internalID: -1294220579
+      spriteID: 10d6db3f010db864ea821e6c5869c2a7
+      internalID: 657490158
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: conceptsmall_2
+      name: walkSheet_2
       rect:
         serializedVersion: 2
-        x: 1000
+        x: 1024
         y: 0
-        width: 500
-        height: 500
+        width: 512
+        height: 1024
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -153,8 +153,92 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 52380a76c344fe6469d954abde7fd096
-      internalID: -1021983858
+      spriteID: 58c1cfb9c4d5d5c4b8382b56a7e996af
+      internalID: 74008896
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walkSheet_3
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 0
+        width: 512
+        height: 1024
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d6332b3d64b274408e56e64a3cff60c
+      internalID: -754114261
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walkSheet_4
+      rect:
+        serializedVersion: 2
+        x: 2048
+        y: 0
+        width: 512
+        height: 1024
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 88a90efe661aa8e4e9b745deddfaebe9
+      internalID: -1583342251
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walkSheet_5
+      rect:
+        serializedVersion: 2
+        x: 2560
+        y: 0
+        width: 512
+        height: 1024
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 499ebc1058381fb4ebcb4c98bc4cc4c9
+      internalID: -563534372
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walkSheet_6
+      rect:
+        serializedVersion: 2
+        x: 3072
+        y: 0
+        width: 512
+        height: 1024
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8bc91adeb69547c4dbdfa116a1073bc8
+      internalID: -650301000
       vertices: []
       indices: 
       edges: []
@@ -170,9 +254,13 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      conceptsmall_0: 1779359151
-      conceptsmall_1: -1294220579
-      conceptsmall_2: -1021983858
+      walkSheet_0: -605572722
+      walkSheet_1: 657490158
+      walkSheet_2: 74008896
+      walkSheet_3: -754114261
+      walkSheet_4: -1583342251
+      walkSheet_5: -563534372
+      walkSheet_6: -650301000
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
