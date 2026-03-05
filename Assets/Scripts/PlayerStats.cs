@@ -36,8 +36,8 @@ public PlayerMovement playerMovement;
 
     void Update()
     {
-        if (Input.GetKey(KeyCode.LeftShift) && currentStamina > 0 && zeroed == false && Time.timeScale == 1f) //if holding shift, stamina decreases and you go faster. 
-        {                                                                             //BUT, only if stamina has not been zeroed. (creates delay)
+        if (Input.GetKey(KeyCode.LeftShift) && currentStamina > 0 && zeroed == false && Time.timeScale == 1f && playerMovement.rb.velocity.magnitude != 0) //if holding shift, stamina decreases and you go faster. 
+        {                                                                             //BUT, only if stamina has not been zeroed, and if you are moving (creates delay)
             SetStamina(-decreaseStamina);
             playerMovement.speed = 7f;
             if(currentStamina == 0) playerMovement.speed = 5f;

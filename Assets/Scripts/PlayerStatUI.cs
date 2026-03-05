@@ -32,6 +32,7 @@ public class PlayerStatUI : MonoBehaviour
 
     public void SetStamina(float stamina)
     {
+        
         Stamina = stamina;
         float newStaminaHeight = (Stamina / MaxStamina) * StaminaHeight;
 
