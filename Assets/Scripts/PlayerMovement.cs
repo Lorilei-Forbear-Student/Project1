@@ -10,7 +10,7 @@ public class PlayerMovement : MonoBehaviour
     public float speed = 5f;
     private bool isFacingRight = true;
     private Vector2 movement;
-    [SerializeField] private Rigidbody2D rb;
+    [SerializeField] public Rigidbody2D rb;
     public Animator animator;
     void Start()
     {
