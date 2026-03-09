@@ -2566,6 +2566,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 580e483023b03de4ab7d3d010204f206, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  container:
+  - {fileID: 2117356489}
+  - {fileID: 1299271150}
+  - {fileID: 1062136036}
+  - {fileID: 1968082054}
+  - {fileID: 2089814145}
+  - {fileID: 778254595}
+  - {fileID: 588463879}
+  - {fileID: 164754682}
+  - {fileID: 2026137471}
+  - {fileID: 1149262171}
+  - {fileID: 598598608}
+  - {fileID: 132141984}
+  currentSlot: {fileID: 0}
+  item: {fileID: 0}
 --- !u!114 &614700347
 MonoBehaviour:
   m_ObjectHideFlags: 0

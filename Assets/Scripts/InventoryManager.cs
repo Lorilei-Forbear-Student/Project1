@@ -1,8 +1,4 @@
-using System.Collections;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
-using JetBrains.Annotations;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -16,17 +12,6 @@ public class InventoryManager : MonoBehaviour
     void Awake()
     {
         EstablishInventory();
-    }
-
-    void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.CompareTag("item"))
-        {
-            
-            //when available slot (to come) == currentSlot
-            //how to get item?
-            PlaceInInventory(currentSlot, item);
-        }
     }
     public List<GameObject> EstablishInventory()
     {
