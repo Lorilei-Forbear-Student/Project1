@@ -102,8 +102,8 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 528
-        height: 528
+        width: 1024
+        height: 1024
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -111,8 +111,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 72f4c1a67336c5d4590a66ee9e620716
-      internalID: 1574885596
+      spriteID: 8f993f830e293734fb62684321b17bc7
+      internalID: -1543228695
       vertices: []
       indices: 
       edges: []
@@ -121,10 +121,10 @@ TextureImporter:
       name: axeSwing2sht_1
       rect:
         serializedVersion: 2
-        x: 528
+        x: 1024
         y: 0
-        width: 528
-        height: 528
+        width: 1024
+        height: 1024
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -132,8 +132,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f8e47b2dc64070445b656dcb7f47e234
-      internalID: -798821591
+      spriteID: dd2db1957afbb4743a6385330c3f7602
+      internalID: -784607327
       vertices: []
       indices: 
       edges: []
@@ -142,10 +142,10 @@ TextureImporter:
       name: axeSwing2sht_2
       rect:
         serializedVersion: 2
-        x: 1056
+        x: 2048
         y: 0
-        width: 528
-        height: 528
+        width: 1024
+        height: 1024
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -153,8 +153,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 94198ffb91701294198afcc9ccab4744
-      internalID: 1363645317
+      spriteID: ca8545d8a12536f4ebb754822e2bf164
+      internalID: -653814158
       vertices: []
       indices: 
       edges: []
@@ -170,9 +170,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      axeSwing2sht_0: 1574885596
-      axeSwing2sht_1: -798821591
-      axeSwing2sht_2: 1363645317
+      axeSwing2sht_0: -1543228695
+      axeSwing2sht_1: -784607327
+      axeSwing2sht_2: -653814158
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
