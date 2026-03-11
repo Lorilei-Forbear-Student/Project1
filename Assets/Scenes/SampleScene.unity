@@ -2566,6 +2566,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 580e483023b03de4ab7d3d010204f206, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  container:
+  - {fileID: 2117356489}
+  - {fileID: 1299271150}
+  - {fileID: 1062136036}
+  - {fileID: 1968082054}
+  - {fileID: 2089814145}
+  - {fileID: 778254595}
+  - {fileID: 588463879}
+  - {fileID: 164754682}
+  - {fileID: 2026137471}
+  - {fileID: 1149262171}
+  - {fileID: 598598608}
+  - {fileID: 132141984}
+  currentSlot: {fileID: 0}
+  item: {fileID: 0}
 --- !u!114 &614700347
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6353,6 +6368,22 @@ PrefabInstance:
     - target: {fileID: 1478269912817262584, guid: 1d92ef8b350578c48a656a9c1a686940, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 3722738435632296704, guid: 1d92ef8b350578c48a656a9c1a686940, type: 3}
+      propertyPath: m_Size.x
+      value: 4.319706
+      objectReference: {fileID: 0}
+    - target: {fileID: 3722738435632296704, guid: 1d92ef8b350578c48a656a9c1a686940, type: 3}
+      propertyPath: m_Size.y
+      value: 9.838749
+      objectReference: {fileID: 0}
+    - target: {fileID: 3722738435632296704, guid: 1d92ef8b350578c48a656a9c1a686940, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.08149189
+      objectReference: {fileID: 0}
+    - target: {fileID: 3722738435632296704, guid: 1d92ef8b350578c48a656a9c1a686940, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.08230114
       objectReference: {fileID: 0}
     - target: {fileID: 3897627965090745549, guid: 1d92ef8b350578c48a656a9c1a686940, type: 3}
       propertyPath: m_SortingOrder
