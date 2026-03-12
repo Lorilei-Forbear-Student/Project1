@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Enemy : MonoBehaviour
@@ -21,10 +22,10 @@ public class Enemy : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Attack"))
+        if (collision.CompareTag("Player"))
         {
             enemyCurrentHealth -= enemyDamage;
-            
+            Flash();
         }
         
     }
@@ -37,7 +38,7 @@ public class Enemy : MonoBehaviour
     IEnumerator FlashRoutine()
     {
         spriteRenderer.color = hitColor;
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(0.4f);
         spriteRenderer.color = originalColor;
     }
 }
