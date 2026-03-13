@@ -5,6 +5,7 @@ using UnityEngine;
 public class Attack : MonoBehaviour
 {
     public Animator animator;
+    [SerializeField] new public CircleCollider2D collider;
 
     void Start()
     {
