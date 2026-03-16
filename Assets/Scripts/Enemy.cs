@@ -26,8 +26,8 @@ public class Enemy : MonoBehaviour
     {
         if (collision.CompareTag("Attack"))
         {
-            enemyCurrentHealth -= enemyDamage;
-            Flash();
+            enemyCurrentHealth -= enemyDamage / 2; //divided by 2 because the damage stays for too many frames, making the enemy die more quickly than anticipated,
+            Flash();                               //and i don't want to fix it where it's broken.  #goated
 
             Die();
         }
