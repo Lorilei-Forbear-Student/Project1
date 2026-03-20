@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class UIInventoryPage : MonoBehaviour
 {
-    [SerializeField] private UIInventoryItem itemPrefab;
+    [SerializeField] public UIInventoryItem itemPrefab;
     [SerializeField] private RectTransform contentPanel;
 
     List<UIInventoryItem> listOfUIItems = new List<UIInventoryItem>();
