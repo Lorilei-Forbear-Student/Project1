@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 049c2938ccee746498761823775cad6a
+guid: a84c4d8acfe37a847b50531a89125647
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -97,13 +97,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: axeSwing2sht_0
+      name: wolfSprtSht_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 1024
-        height: 1024
+        height: 512
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -111,20 +111,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8f993f830e293734fb62684321b17bc7
-      internalID: -1543228695
+      spriteID: e0754b1e87d1c2443ba8713a6c2bddb0
+      internalID: 197560647
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: axeSwing2sht_1
+      name: wolfSprtSht_1
       rect:
         serializedVersion: 2
         x: 1024
         y: 0
         width: 1024
-        height: 1024
+        height: 512
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -132,20 +132,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dd2db1957afbb4743a6385330c3f7602
-      internalID: -784607327
+      spriteID: 14cd9c27defb2e343a7d764a73fbdefd
+      internalID: -1950231408
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: axeSwing2sht_2
+      name: wolfSprtSht_2
       rect:
         serializedVersion: 2
         x: 2048
         y: 0
         width: 1024
-        height: 1024
+        height: 512
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -153,8 +153,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ca8545d8a12536f4ebb754822e2bf164
-      internalID: -653814158
+      spriteID: f8120e451ade1014faa3dfdabb73ba2b
+      internalID: 1287748714
       vertices: []
       indices: 
       edges: []
@@ -170,9 +170,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      axeSwing2sht_0: -1543228695
-      axeSwing2sht_1: -784607327
-      axeSwing2sht_2: -653814158
+      wolfSprtSht_0: 197560647
+      wolfSprtSht_1: -1950231408
+      wolfSprtSht_2: 1287748714
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

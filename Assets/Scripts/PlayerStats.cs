@@ -22,17 +22,17 @@ public PlayerMovement playerMovement;
         currentStamina = maxStamina;
     }
 
-    void OnTriggerStay2D(Collider2D other)
-    {
-        if (other.gameObject.CompareTag("Enemy"))
-        {
-            SetHealth(-damage);
-            if(currentHealth == 0)
-            {
-                GameOver();
-            }
-        }
-    } 
+    // void OnTriggerStay2D(Collider2D other)
+    // {
+    //     if (other.gameObject.CompareTag("Enemy"))
+    //     {
+    //         SetHealth(-damage);
+    //         if(currentHealth == 0)
+    //         {
+    //             GameOver();
+    //         }
+    //     }
+    // } 
 
     void Update()
     {
