@@ -2,20 +2,18 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class UIInventoryPage : MonoBehaviour
 {
     [SerializeField] public UIInventoryItem itemPrefab;
     [SerializeField] private RectTransform contentPanel;
     [SerializeField] public UIInventoryDesc itemDescription;
-    public bool invUp = false;
+    public bool invUp;
     public List<UIInventoryItem> listOfUIItems = new List<UIInventoryItem>();
 
     public Sprite image;
     public int quantity;
     public string title, description;
-
 
     private void Awake()
     {
@@ -74,16 +72,43 @@ public class UIInventoryPage : MonoBehaviour
 
     private void HandleEndDrag(UIInventoryItem item)
     {
+        //ResetDraggedItem();
     }
 
     private void HandleSwap(UIInventoryItem item)
     {
-        
+        int index = listOfUIItems.IndexOf(item);
+        if(index == -1)
+        {
+            return;
+        }
+        //OnSwapItems?.Invoke(currentlyDraggedItemIndex, index);
+        HandleItemSelection(item);
+    }
+
+    private void ResetDraggedItem()
+    {
+        //mouseFollower.Toggle(false);
+        //currentlyDraggedItemIndex = -1;
     }
 
     private void HandleBeginDrag(UIInventoryItem item)
     {
-        
+        int index = listOfUIItems.IndexOf(item);
+        if(index == -1)
+        {
+            return;
+        }
+        //currentlyDraggedItemIndex = index;
+        HandleItemSelection(item);
+        //OnStartDragging?.invoke(index);
+
+    }
+
+    public void CreateDraggeditem(Sprite sprite, int quantity)
+    {
+        //mouseFollower.Toggle(true);
+        //mouseFollower.SetData(sprite, quantity)
     }
 
     private void HandleItemSelection(UIInventoryItem item)
@@ -96,6 +121,8 @@ public class UIInventoryPage : MonoBehaviour
         gameObject.SetActive(true);
         ResetSelection();
         invUp = true;
+
+        listOfUIItems[0].SetData(image, quantity);
     }
 
     private void ResetSelection()
@@ -114,5 +141,6 @@ public class UIInventoryPage : MonoBehaviour
         //actionPanel.Toggle(false);
         gameObject.SetActive(false);
         //ResetDraggedItem();
+        invUp = false;
     }
 }
