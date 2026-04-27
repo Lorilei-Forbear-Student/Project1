@@ -1,4 +1,5 @@
 using UnityEditor;
+using UnityEditor.Animations;
 using UnityEditor.Callbacks;
 using UnityEngine;
 
@@ -7,11 +8,9 @@ public class MoveTowardPlayer : MonoBehaviour
     private float moveSpeed = 3f;
     [SerializeField]private Transform playerTarget;
     private bool isPlayerDetected = false;
-    private bool enemyFacingRight = true;
-    private float enemyHorizontal;
     private Vector3 startPosition;
-    private Rigidbody2D rb;
 
+Rigidbody2D rb = 
     void Start()
     {
         startPosition = transform.position;
@@ -34,6 +33,7 @@ public class MoveTowardPlayer : MonoBehaviour
     }
     void Update()
     {
+        EnemyFlip();
         if(isPlayerDetected == true)
         {
             transform.position = Vector3.MoveTowards(transform.position, playerTarget.position, moveSpeed * Time.deltaTime);
@@ -45,13 +45,11 @@ public class MoveTowardPlayer : MonoBehaviour
 
     }
  
-    // private void EnemyFlip()
-    // {
-    //     if(enemyFacingRight &&  enemyHorizontal < 0f || !enemyFacingRight &&  enemyHorizontal > 0f)
-    //     {
-    //         enemyFacingRight = !enemyFacingRight;
-
-    //         transform.Rotate(0.0f, -180f, 0.0f);
-    //     }
-    // }
+    private void EnemyFlip()
+    {
+        if(rb.velocity.x > 0)
+        {
+            transform.Rotate(0.0f, -180f, 0.0f);
+        }
+    }
 }

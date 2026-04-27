@@ -25,6 +25,7 @@ public class ToggleMenu : MonoBehaviour
             {
                 invUp = !invUp;
                 inv.SetActive(invUp);
+                
             }
             
             PauseGame();
