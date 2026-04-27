@@ -1562,6 +1562,10 @@ MonoBehaviour:
   itemPrefab: {fileID: 3212901855438305826, guid: f43603bbb519c114ebbcd5670d8fcabc, type: 3}
   contentPanel: {fileID: 7998955075412285703}
   itemDescription: {fileID: 5966464751954359529}
+  image: {fileID: 0}
+  quantity: 0
+  title: lorem
+  description: lorem ipsum
 --- !u!1 &7144463568523712707
 GameObject:
   m_ObjectHideFlags: 0

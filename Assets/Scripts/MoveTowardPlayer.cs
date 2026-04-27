@@ -10,7 +10,6 @@ public class MoveTowardPlayer : MonoBehaviour
     private bool isPlayerDetected = false;
     private Vector3 startPosition;
 
-Rigidbody2D rb = 
     void Start()
     {
         startPosition = transform.position;
@@ -33,7 +32,7 @@ Rigidbody2D rb =
     }
     void Update()
     {
-        EnemyFlip();
+        //EnemyFlip();
         if(isPlayerDetected == true)
         {
             transform.position = Vector3.MoveTowards(transform.position, playerTarget.position, moveSpeed * Time.deltaTime);
@@ -45,11 +44,11 @@ Rigidbody2D rb =
 
     }
  
-    private void EnemyFlip()
-    {
-        if(rb.velocity.x > 0)
-        {
-            transform.Rotate(0.0f, -180f, 0.0f);
-        }
-    }
+    // private void EnemyFlip()
+    // {
+    //     if(rb.velocity.x > 0)
+    //     {
+    //         transform.Rotate(0.0f, -180f, 0.0f);
+    //     }
+    // }
 }
