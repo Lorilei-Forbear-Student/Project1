@@ -9,16 +9,17 @@ public class UIInventoryPage : MonoBehaviour
     [SerializeField] private RectTransform contentPanel;
     [SerializeField] public UIInventoryDesc itemDescription;
     public bool invUp;
+    [SerializeField] private MouseFollower mouseFollower;
     public List<UIInventoryItem> listOfUIItems = new List<UIInventoryItem>();
 
-    public Sprite image;
+    public Sprite image, image2;
     public int quantity;
     public string title, description;
 
     private void Awake()
     {
         Hide();
-        //mouseFollower.Toggle(false);
+        mouseFollower.Toggle(false);
         itemDescription.ResetDescription();
     }
     public void InitializeInventoryUI(int inventorySize)
@@ -72,6 +73,7 @@ public class UIInventoryPage : MonoBehaviour
 
     private void HandleEndDrag(UIInventoryItem item)
     {
+        mouseFollower.Toggle(false);
         //ResetDraggedItem();
     }
 
@@ -88,7 +90,7 @@ public class UIInventoryPage : MonoBehaviour
 
     private void ResetDraggedItem()
     {
-        //mouseFollower.Toggle(false);
+        mouseFollower.Toggle(false);
         //currentlyDraggedItemIndex = -1;
     }
 
@@ -103,12 +105,15 @@ public class UIInventoryPage : MonoBehaviour
         HandleItemSelection(item);
         //OnStartDragging?.invoke(index);
 
+        mouseFollower.Toggle(true);
+        mouseFollower.SetData(image, quantity);
+
     }
 
     public void CreateDraggeditem(Sprite sprite, int quantity)
     {
-        //mouseFollower.Toggle(true);
-        //mouseFollower.SetData(sprite, quantity)
+        mouseFollower.Toggle(true);
+        mouseFollower.SetData(sprite, quantity);
     }
 
     private void HandleItemSelection(UIInventoryItem item)
@@ -123,6 +128,7 @@ public class UIInventoryPage : MonoBehaviour
         invUp = true;
 
         listOfUIItems[0].SetData(image, quantity);
+        listOfUIItems[1].SetData(image2, quantity);
     }
 
     private void ResetSelection()
