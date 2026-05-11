@@ -12,12 +12,19 @@ public class Attack : MonoBehaviour
         animator = GetComponent<Animator>();
     }
 
+IEnumerator StartAndStopAttack(float duration)
+    {
+            animator.SetBool("isAttacking", true);
+            Debug.Log("button pressed");
+        yield return new WaitForSeconds(duration);
+
+        animator.SetBool("isAttacking", false);
+    }
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if(Input.GetKeyDown(KeyCode.Space))
         {
-            animator.SetBool("isAttacking", true);
-            Debug.Log("Attack Button Pressed");
+            StartCoroutine(StartAndStopAttack(0.5f));
         }
     }
 }

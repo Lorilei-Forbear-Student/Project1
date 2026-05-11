@@ -9,6 +9,7 @@ public class MoveTowardPlayer : MonoBehaviour
     [SerializeField]private Transform playerTarget;
     private bool isPlayerDetected = false;
     private Vector3 startPosition;
+    
 
     void Start()
     {
@@ -32,7 +33,7 @@ public class MoveTowardPlayer : MonoBehaviour
     }
     void Update()
     {
-        //EnemyFlip();
+        
         if(isPlayerDetected == true)
         {
             transform.position = Vector3.MoveTowards(transform.position, playerTarget.position, moveSpeed * Time.deltaTime);
@@ -43,12 +44,5 @@ public class MoveTowardPlayer : MonoBehaviour
         }
 
     }
- 
-    // private void EnemyFlip()
-    // {
-    //     if(rb.velocity.x > 0)
-    //     {
-    //         transform.Rotate(0.0f, -180f, 0.0f);
-    //     }
-    // }
+    
 }
