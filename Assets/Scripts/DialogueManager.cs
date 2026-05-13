@@ -11,8 +11,8 @@ public class DialogueManager : MonoBehaviour
     void Start()
     {
         textComponent.text = string.Empty;
-        StartDialogue();
-    }
+        StartDialogue(); //next: if(interacts with dialogue compatible object), {start dialogue for that object}
+    }                   // each object has an unused string array that is assigned to this script's lines[] when interacting?
 
     void Update()
     {
